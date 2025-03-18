@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+   <style>
+    body {
+        background: rgba(31, 193, 242, 0.66);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+    p{
+        font-size: 10px;
+        height: 115px;
+        display: flex;
+        bottom :0;
+        justify-content: center;
+        align-items: center;
+    }
+    div {
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        height: 100%;
+        max-height:fit-content;
+        max-width: 900px;
+        box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.3);
+        overflow: auto;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+h1  {
+     color: #ffffff;
+     text-align: center;
+     font-weight: bolder;
+     display: block;
+     font-size:65px;
+     padding: 31px 100px;
+     text-decoration: none;
+     background-color: #000000;
+     display: inline-block;
+     display: flex;
+     transition: color 0.3s ease;
+}
+
+label {
+    color: #000000;
+     text-align: center;
+     font-weight: bolder;
+     font-size: 30px;
+     padding: 7px 10px;
+     display: block;
+     text-decoration: none;
+     display: flex;
+}
+input {
+  display: block;
+  padding: 16px 85px;
+  font-size: 30px;
+  font-weight: bolder;
+  text-decoration:none;
+  background-color: #ffffff; /* Button background color */
+  color: #000000; /* Button text color */
+  text-align: center;
+  justify-content:right;
+  transition: background-color 0.3s ease; /* Add smooth transition for hover effect */
+}
+
+input:hover {
+  background-color: #2ff8f8; 
+}
+#payqr:hover{
+    background-color: #000000;
+}
+#ticqr:hover{
+    background-color:#ffffff;
+}
+buttonstarting{
+    font-size: 3.5rem;
+    font-family: 'Kanit','Poppins', 'Lato', Calibri, Arial, sans-serif;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    padding:30px 90px;
+    vertical-align: baseline;
+    flex: 0;
+    color: #fff;
+    text-align: center;
+    height: 15px;
+    width: 100%;
+    padding: 120px 80px;
+    position:static;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color:#31f2cb;
+   }
+   button{
+        text-align: center;
+        text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+        border: 0;
+        outline: 0;
+        vertical-align: baseline;
+        flex: 1;
+        font-size: 50px;
+        color: #fff;
+        text-align: center;
+        height: 15px;
+        width: 100%;
+        padding: 120px 80px;
+        position:static;
+        border:2cm;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+            background-color: rgba(208, 129, 129, 0.5);
+            color: #000000;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            opacity: 0.8; /* Make buttons transparent */
+   }
+   button:hover{
+    background-color: #000000;
+   }
+   #b2{
+    background-color: rgb(138, 250, 218);
+    color: hsl(98, 78%, 21%);
+   }
+   #b1:hover,#b2:hover{
+    background-color: #000000;
+   }
+   #b1{
+    background-color: rgb(185, 203, 151);color: #1831b2;
+   }
+</style>
+</head>
+<body><div>
+<p style="top:0">
+ <button id="b1" style="font-weight:900;" onclick="window.location.href='/profile'">Profile</button>
+   <button id="b2" style="font-weight:900;" onclick="window.location.href='/history'">History</button>
+    <button style="color: #ff1c1c;font-weight: 900;"><a href="{{ url_for('home') }}">Logout</a></button>
+</p><br>
+<h1>Generate Payment QR</h1>    
+<form action="/generate_qr" method="POST" onsubmit="return validateForm()">
+        <label for="current"><h2>Boarding Point:</h2></label>
+        <input type="text" id="current" name="current" list="currentList" required>
+        <datalist id="currentList">
+            <option value="Adilabad">
+    <option value="Bhadradri Kothagudem">
+    <option value="Hanamkonda">
+    <option value="secundrabad">
+    <option value="Hyderabad">
+    <option value="Jagtial">
+    <option value="Jangoan">
+    <option value="Jayashankar Bhupalpally">
+    <option value="Jogulamba Gadwal">
+    <option value="Kamareddy">
+    <option value="Karimnagar">
+    <option value="Khammam">
+    <option value="Komaram bheem Asifabad">
+    <option value="Mahabubabad">
+    <option value="Mahabubnagar">
+    <option value="Mancherial">
+    <option value="Medak">
+    <option value="Medchal">
+    <option value="Mulug">
+    <option value="Nagarkurnool">
+    <option value="Nalgonda">
+    <option value="Narayanpet">
+    <option value="Nirmal">
+    <option value="Nizamabad">
+    <option value="Peddapalli">
+    <option value="Rajanna Sircilla">
+    <option value="Rangareddy">
+    <option value="Sangareddy">
+    <option value="Siddipet">
+    <option value="Suryapet">
+    <option value="Vikarabad">
+    <option value="Wanaparthy">
+    <option value="Warangal">
+    <option value="Yadadri Bhuvanagiri">
+        </datalist>
+        <label for="destination"><h2>Dropping Point:</h2></label>
+        <input type="text" id="destination" name="destination" list="destinationList" required>
+        <datalist id="destinationList">
+            <option value="Adilabad">
+    <option value="Bhadradri Kothagudem">
+    <option value="Hanamkonda">
+    <option value="Hyderabad">
+    <option value="Jagtial">
+    <option value="Jangoan">
+    <option value="Jayashankar Bhupalpally">
+    <option value="Jogulamba Gadwal">
+    <option value="Kamareddy">
+    <option value="Karimnagar">
+    <option value="secundrabad">
+    <option value="Khammam">
+    <option value="Komaram bheem Asifabad">
+    <option value="Mahabubabad">
+    <option value="Mahabubnagar">
+    <option value="Mancherial">
+    <option value="Medak">
+    <option value="Medchal">
+    <option value="Mulug">
+    <option value="Nagarkurnool">
+    <option value="Nalgonda">
+    <option value="Narayanpet">
+    <option value="Nirmal">
+    <option value="Nizamabad">
+    <option value="Peddapalli">
+    <option value="Rajanna Sircilla">
+    <option value="Rangareddy">
+    <option value="Sangareddy">
+    <option value="Siddipet">
+    <option value="Suryapet">
+    <option value="Vikarabad">
+    <option value="Wanaparthy">
+    <option value="Warangal">
+    <option value="Yadadri Bhuvanagiri">
+    </datalist>
+        <label for="Adults"><h2>No. of Adults:</h2></label>
+        <input type="number" id="adults" name="adults" value="1" required>
+        <label for="child"><h2>No. of Child:</h2></label>
+        <input type="number" id="child" name="child" value="0" required>
+        <label for="female"><h2>No. of Female:</h2></label>
+        <input type="number" id="female" name="female" value="0" required>
+       <label for="cost"><h2>Cost per ticket:</h2></label>
+       <input type="number" id="cost" name="cost" step="0.01" oninput="calculatePrice()" required><br><br>
+       <label for="final"><h2>Total Amount:</h2></label> 
+       <input type="text" id="price" name="price" readonly><br><br>
+    <script>
+        window.onload = function() {
+            calculatePrice(); // Calculate the initial price on page load
+        };
+
+        function calculatePrice() {
+            var adults = parseFloat(document.getElementById('adults').value);
+            var child = parseFloat(document.getElementById('child').value);
+            var female = parseFloat(document.getElementById('female').value);
+            var cost = parseFloat(document.getElementById('cost').value);
+            var price =  (adults * cost) + (child * (0.5 * cost)) + (female * 0);// Display the calculated price
+            document.getElementById('price').value = price.toFixed(2);
+        }
+     </script>
+       <b><input id="payqr" style="color:#ffffff;padding: 15px 80px;background-color: hsl(0, 100%, 50%);font-size: 50px;" type="submit" value="Generate Payment QR">
+        </b><br><br><br>
+    </form>
+       <form action="/generate_ticket" method="post">
+       <b> <input id="ticqr" style="color:#000000;padding:15px 105px;background-color: hsl(97, 93%, 51%);font-size: 50px; " type="submit" value="Generate Ticket QR">
+       </b><br><br><br>
+    </form>
+</div>
+</body>
+</html>

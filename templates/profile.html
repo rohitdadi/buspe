@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            box-sizing: border-box;
+            text-align: center;
+            background: rgba(31, 193, 242, 0.66);
+        }
+        form {
+            line-height: 1;
+            text-align: left;
+            font-size: small;
+            font-family: 'Kanit','Poppins', 'Lato', Calibri, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            vertical-align: baseline;
+            background-color:rgb(255, 255, 255);
+            background-size: cover;
+            margin-top: 0;
+            justify-content: center;
+            max-width: 450px;
+            width: 100%;
+            height: 100%;
+            float: left;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            bottom: 0;
+            right: auto;
+            box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.3);
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        
+        input {
+            padding: 10px 20px;
+            border: 1px solid #b2b2b2;
+            outline: none;
+            border-radius: 0.25em;
+            color: rgb(0, 0, 0);
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            background-color: #ffffff;
+            transition: 0.3s background-color;
+        }
+
+        input:hover {
+            background-color: #f8ff31;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+            
+    </style>
+</head>
+<body>
+    
+    <form action="/update_profile" method="post">
+        <h1 style="text-align: center;">Edit Profile</h1>
+        <h2>
+        <label style="font-weight: bolder;"; for="conductor_id">Conductor ID:</label>
+        <input type="text" id="conductor_id" name="conductor_id" value="{{ profile['conductor_id'] }}" required><br><br>
+        
+        <label for="conductor_name">Conductor Name:</label>
+        <input type="text" id="conductor_name" name="conductor_name" value="{{ profile['conductor_name'] }}" required><br><br>
+        
+        <label for="bus_no">Bus No:</label>
+        <input type="text" id="bus_no" name="bus_no" value="{{ profile['bus_no'] }}" required><br><br>
+        
+        <label for="upi_id">UPI ID:</label>
+        <input type="text" id="upi_id" name="upi_id" value="{{ profile['upi_id'] }}" required><br><br>
+        
+        <input style="background-color: rgb(255, 239, 10);"type="submit" value="Save">
+        </h2>
+    </form>
+</body>
+</html>

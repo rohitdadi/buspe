@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buspe</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <style>
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #100720;
+        }
+        button{
+            width:265px;
+            height:162px;
+            cursor: pointer;
+            color: #fff;
+            border-radius: 1rem;
+            border: none;
+            position: relative;
+            background: radial-gradient(circle farthest-corner at 10% 20%,rgba(255,94,247,1)17.8%,rgba(2,245,255,1)100.2%);
+            transition: 0.1s;
+        }
+        button::after{
+            content:'';
+            width:100%;
+            height:100%;
+            background-image: radial-gradient(circle farthest-corner at 10% 20%,rgba(255,94,247,1)17.8%, rgba(2,245,255,1)100.2%);
+            filter: blur(15px);
+            z-index: -1;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        button:hover{
+            transform: scale(0.9) rotate(3deg);
+            background: #100720;
+            transition: 0.5s;
+        }
+        /* Reset default list styles */
+        ul1 {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        #clock {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        div {
+            line-height: 1;
+            text-align: center;
+            font-size: small;
+            font-family: 'Kanit','Poppins', 'Lato', Calibri, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            vertical-align: baseline;
+            background-color:rgb(255, 255, 255);
+            background-size: cover;
+            margin-top: 0;
+            justify-content: center;
+            max-width: 450px;
+            width: 100%;
+            height: 100%;
+            float: left;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            bottom: 0;
+            right: auto;
+            box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.3);
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        /* Style the list items as buttons */
+        body1 {
+            background: rgba(31, 193, 242, 0.66);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Style the anchor tags as buttons */
+        button1 {
+            text-align: center;
+            text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+            font-size: 25px;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-family: 'Teko', 'Kanit','Poppins', 'Lato', Calibri, Arial, sans-serif;
+            display: inline-block;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: rgba(158, 150,150, 0.5);
+            color: #000000;
+            width: 300px;
+            height: 200px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            opacity: 0.8; /* Make buttons transparent */
+        }
+        .big-title{
+    color:rgb(63, 89, 88);
+    font-size: 3.5rem;
+    margin: 25px;
+}
+        /* Change button background color on hover */
+    </style>
+</head>
+<body>
+    <div>
+        <br><br>
+        <img style="    -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        --blue: #007bff;
+        --indigo: #6610f2;
+        --purple: #6f42c1;
+        --pink: #e83e8c;
+        --red: #dc3545;
+        --orange: #fd7e14;
+        --yellow: #ffc107;
+        --green: #28a745;
+        --teal: #20c997;
+        --cyan: #17a2b8;
+        --white: #fff;
+        --gray: #6c757d;
+        --gray-dark: #343a40;
+        --primary: #007bff;
+        --secondary: #6c757d;
+        --success: #28a745;
+        --info: #17a2b8;
+        --warning: #ffc107;
+        --danger: #dc3545;
+        --light: #f8f9fa;
+        --dark: #343a40;
+        --breakpoint-xs: 0;
+        --breakpoint-sm: 576px;
+        --breakpoint-md: 768px;
+        --breakpoint-lg: 992px;
+        --breakpoint-xl: 1200px;
+        --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+        font-weight: 400;
+        text-align: left;
+        font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #337ab7;
+        width: 950px;
+        aspect-ratio: auto 950 / 150;
+        box-sizing: border-box;
+        border: 0;
+        vertical-align: middle;
+        height: auto;
+        max-width: 87%;
+        padding: 0;
+        margin: 7px 0;" src="https://tgsrtc.telangana.gov.in/img/header-banner.jpeg" alt="logo" width="950" height="170" class="img-fluid">
+        <h1 class="big-title">BUSPE SERVICE</h1>
+        <br><br><button style="font-size:40px;" onclick="window.location.href='/index'"><b>Conductor</b></button><br><br>
+         <h2 style="color: rgb(36, 198, 55);">Click User to download the ticket</h2>
+        <button style="font-size:60px;" onclick="window.location.href='/user'"><b>User</button>
+        <br>Happy Journey<br><br>
+        <img style="bottom: 0;" src="https://cdn.techinasia.com/data/images/78ffce3c178a73d396ec52a493edd056.png" alt="chart1" width="350" height="200" class="img-fluid">
+    </div>
+</body>
+</html>

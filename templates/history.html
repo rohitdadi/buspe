@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket History</title>
+    <style>
+        body {
+            background: rgba(31, 193, 242, 0.66);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.3);
+            max-width: 850px;
+            width: 100%;
+            overflow: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #000;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ticket History</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Boarding Point</th>
+                    <th>Dropping Point</th>
+                    <th>Adults</th>
+                    <th>Child</th>
+                    <th>Female</th>
+                    <th>Price</th>
+                    <th>Date and Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ticket in ticket_history %}
+                <tr>
+                    <td>{{ ticket.current }}</td>
+                    <td>{{ ticket.destination }}</td>
+                    <td>{{ ticket.adults }}</td>
+                    <td>{{ ticket.child }}</td>
+                    <td>{{ ticket.female }}</td>
+                    <td>{{ ticket.price }}</td>
+                    <td>{{ ticket.date_time }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style type="text/css">
+body
+{
+  background-image:url("https://cdn.vectorstock.com/i/500p/61/67/abstract-light-blue-watercolor-for-background-vector-31686167.jpgs");
+ background-size:full;
+ background-repeat:repeat;
+ background-attachment: fixed;
+ margin: 0;
+ padding: 0;
+ overflow: hidden;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+}
+form {
+    background-color: rgba(169, 155, 155, 0.65);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(67, 63, 63, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    color: #000000;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #000000;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+    </style>
+</head>
+<body>
+   
+    <form action="/form_login" method="post">
+        <img src="https://th-i.thgim.com/public/migration_catalog/article10538854.ece/alternates/FREE_1200/13hyskm06-TSRTChy14TSRTC-emblem.jp.jpg" alt="Logo" width="200">
+        <h1>Login</h1>
+     <h2>Conductor ID: </h2>
+    <input type="text" name="username"><br>
+    <h2>Password</h2>
+    <input type="password" name="password"><br>
+    <input style="padding:20px 40px;font-size: 25px;" type="submit" value="Login">
+    <h1>{{info}}</h1>
+    <a href="https://tgsrtc.telangana.gov.in/contact.php" >Facing issue..?</a>
+    </form>
+</body>
+</html>
+
